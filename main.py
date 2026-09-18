@@ -14,6 +14,8 @@ Demonstrates:
 The terminal output provides telemetry for each tick.
 """
 
+import numpy as np
+
 from model import EVChargingModel
 
 
@@ -29,7 +31,7 @@ def run_demo(ticks=35):
         chargers_per_station=2,
         grid_peak_threshold=8,
         deadlock_timeout=6,
-        seed=42,
+        rng=np.random.default_rng(42),
     )
 
     # ======================================================================

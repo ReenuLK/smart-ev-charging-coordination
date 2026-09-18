@@ -9,6 +9,7 @@ import math
 
 import mesa
 import networkx as nx
+import numpy as np
 
 from agents import (
     EVAgent,
@@ -27,10 +28,14 @@ class EVChargingModel(mesa.Model):
         chargers_per_station=2,
         grid_peak_threshold=10,
         deadlock_timeout=6,
+        rng=None,
         seed=None,
     ):
 
-        super().__init__(seed=seed)
+        if rng is None and seed is not None:
+            rng = np.random.default_rng(seed)
+
+        super().__init__(rng=rng)
 
         self.tick = 0
 

@@ -26,6 +26,7 @@ Provides:
 
 import matplotlib.pyplot as plt
 import networkx as nx
+import numpy as np
 import streamlit as st
 
 from model import EVChargingModel
@@ -67,7 +68,7 @@ def initialize_model(
         chargers_per_station=chargers_per_station,
         grid_peak_threshold=grid_peak_threshold,
         deadlock_timeout=deadlock_timeout,
-        seed=42,
+        rng=np.random.default_rng(42),
     )
 
 
