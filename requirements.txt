@@ -1,0 +1,4 @@
+mesa>=3.0
+networkx>=3.0
+streamlit>=1.30
+matplotlib>=3.7
